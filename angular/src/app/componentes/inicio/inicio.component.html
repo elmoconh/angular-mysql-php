@@ -1,0 +1,42 @@
+<div>
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-center"> App-macen</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <button class="btn btn-success" (click)="getNavigation('subir', '')">Agregar Producto</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <table #productsTable class="display" style="width:100%">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre </th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Opciones</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let product of products; let i =index;">
+            <td>{{i + 1}}</td>
+            <td>{{product.p_name}}</td>
+            <td>{{product.p_description}}</td>
+            <td>$ {{product.p_price}}</td>
+            <td>
+              <button type="button" class="btn btn-primary" (click)="getNavigation('view', product.p_id)">Ver</button>&nbsp;
+              <button type="button" class="btn btn-warning" (click)="getNavigation('update', product.p_id)">Editar</button>&nbsp;
+              <button type="button" class="btn btn-danger" (click)= "deleteProduct(product.p_id)">Eliminar</button>
+            </td>
+          </tr>
+          </tbody>
+          <router-outlet></router-outlet>
+  
+        </table>
+      </div>
+    </div>
+  </div>

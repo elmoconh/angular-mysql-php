@@ -24,14 +24,14 @@ export class ProductosService {
 
   // Get single product
   getProductDetails(id): Observable<Products> {
-    return this.http.get<Products>(this.url + 'view_one.php?id=' + id).pipe(map(response => {
+    return this.http.get<Products>(this.url + 'UnProducto.php?id=' + id).pipe(map(response => {
       return response;
     }));
   }
 
   // Create a new Product
   createProduct(data) {
-    return this.http.post(this.url + 'create.php', data).pipe( map(response => {
+    return this.http.post(this.url + 'alta.php', data).pipe( map(response => {
         return response;
       })
     );
@@ -47,7 +47,7 @@ export class ProductosService {
 
   // Delete a product
   deleteProduct(id) {
-    return this.http.get(this.url + 'delete.php?id=' + id).pipe(map(response => {
+    return this.http.get(this.url + 'baja.php?id=' + id).pipe(map(response => {
       return response;
     }));
   }
