@@ -1,1 +1,1 @@
-Prototipoa aplicación con angular mysql y php
+Prototipo aplicación con angular mysql y php
